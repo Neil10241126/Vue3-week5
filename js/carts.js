@@ -94,6 +94,10 @@ const app = createApp({
           this.getCartList();
         });
     },
+    isPhone(value) {
+      const phoneNumber = /^(09)[0-9]{8}$/;
+      return phoneNumber.test(value) ? true : '需要正確的電話號碼';
+    },
     sendOrder() {
       const data = {
         user: this.user,
